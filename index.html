@@ -35,8 +35,8 @@
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
-              <span class="profession">Web Developer</span>
+              <span class="name">ali hamdan</span>
+              <span class="profession">Web Developer 1</span>
             </div>
 
             <div class="rating">
@@ -66,8 +66,8 @@
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
-              <span class="profession">Web Developer</span>
+              <span class="name">amer hamdan</span>
+              <span class="profession">Web Developer 2</span>
             </div>
 
             <div class="rating">
@@ -97,8 +97,8 @@
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
-              <span class="profession">Web Developer</span>
+              <span class="name">jawad makki</span>
+              <span class="profession">Web Developer 3</span>
             </div>
 
             <div class="rating">
@@ -128,8 +128,8 @@
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
-              <span class="profession">Web Developer</span>
+              <span class="name">salim bayoun</span>
+              <span class="profession">Web Developer 4</span>
             </div>
 
             <div class="rating">
@@ -159,8 +159,8 @@
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
-              <span class="profession">Web Developer</span>
+              <span class="name">khalil khansa</span>
+              <span class="profession">Web Developer 66</span>
             </div>
 
             <div class="rating">
@@ -190,7 +190,7 @@
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">ayman hammoud</span>
               <span class="profession">Web Developer</span>
             </div>
 
@@ -221,7 +221,7 @@
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">kassem makki</span>
               <span class="profession">Web Developer</span>
             </div>
 
@@ -252,7 +252,7 @@
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">abbes fawaz</span>
               <span class="profession">Web Developer</span>
             </div>
 
@@ -283,7 +283,7 @@
             </div>
 
             <div class="name-profession">
-              <span class="name">Someone Name</span>
+              <span class="name">samer ahmad</span>
               <span class="profession">Web Developer</span>
             </div>
 
@@ -316,12 +316,14 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 4,
+      slidesPerView: 3,
       spaceBetween: 30,
       slidesPerGroup: 1,
 	  //mean move a card at a time, if it was 2 mean move 2 cards at time
-      loop: true,
+      loop: false,
       loopFillGroupWithBlank: true,
+	  rtl:true,
+	  
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -330,7 +332,18 @@
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+	  on: {
+              slideChangeTransitionStart: function() {
+               var a= this.realIndex;
+			   for(i=0;i<swiper.slides.length;i++)
+     		   swiper.slides[i].style.backgroundColor="transparent";
+			   swiper.slides[a+1].style.backgroundColor="red";
+			   
+              }},
+	 
+
     });
+	 
   </script>
 
 </body>
